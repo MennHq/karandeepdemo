@@ -959,7 +959,7 @@ function initLogoLoop(container, options = {}) {
 
         const name = item.alt || item.title || 'Brand Partner';
         const innerHtml = `
-          <img src="${item.src}" alt="${name}" title="${item.title || ''}" loading="lazy" decoding="async" draggable="false" />
+          <img src="${item.src}" alt="${name}" loading="lazy" decoding="async" draggable="false" />
           ${(labels === 'inline' || labels === 'below') && item.title ? `<span class="logoloop__label">${item.title}</span>` : ''}
         `;
 
