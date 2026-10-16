@@ -257,6 +257,124 @@
       transform: translateY(0) scale(0.98);
     }
 
+    /* Continuous Sheen Loop Keyframes for Default Hover Animation */
+    @keyframes btnSheenLoop {
+      0% {
+        left: -65%;
+        opacity: 0;
+      }
+      8% {
+        opacity: 1;
+      }
+      38% {
+        left: 140%;
+        opacity: 1;
+      }
+      39%, 100% {
+        left: 140%;
+        opacity: 0;
+      }
+    }
+
+    /* Designated CTA Buttons: Hover Effect & Animation Active by Default */
+    .btn-default-hover {
+      transform: translateY(-2px) !important;
+    }
+
+    /* 1. Primary Button (Header Book Consultation & Hero Book Your 1:1 Call) */
+    .btn-primary.btn-default-hover {
+      background: linear-gradient(180deg, #242934 0%, #0E1015 100%) !important;
+      border-color: rgba(255, 255, 255, 0.28) !important;
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 18px 36px -6px rgba(10, 12, 16, 0.55) !important;
+    }
+    .btn-primary.btn-default-hover::after {
+      animation: btnSheenLoop 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+    }
+    .btn-primary.btn-default-hover i, 
+    .btn-primary.btn-default-hover svg {
+      transform: translateX(3px) !important;
+    }
+    .btn-primary.btn-default-hover:hover {
+      transform: translateY(-3px) scale(1.01) !important;
+      border-color: rgba(255, 255, 255, 0.38) !important;
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 6px 12px rgba(0, 0, 0, 0.25),
+        0 24px 44px -6px rgba(10, 12, 16, 0.65) !important;
+    }
+    .btn-primary.btn-default-hover:active {
+      transform: translateY(0) scale(0.98) !important;
+    }
+
+    /* 2. Secondary Button (WhatsApp Inquiries & Select Hair Plan) */
+    .btn-secondary.btn-default-hover {
+      position: relative !important;
+      overflow: hidden !important;
+      background: linear-gradient(180deg, #FFFFFF 0%, #EFEFE9 100%) !important;
+      border-color: #B5B2A5 !important;
+      color: #000000 !important;
+      box-shadow: 
+        inset 0 1px 0 #FFFFFF,
+        0 4px 8px rgba(0, 0, 0, 0.06),
+        0 14px 28px -4px rgba(0, 0, 0, 0.12) !important;
+    }
+    .btn-secondary.btn-default-hover::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -65%;
+      width: 45%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.22), rgba(255, 255, 255, 0.65), transparent);
+      transform: rotate(25deg);
+      pointer-events: none;
+      animation: btnSheenLoop 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+      animation-delay: 0.8s !important;
+    }
+    .btn-secondary.btn-default-hover:hover {
+      transform: translateY(-3px) scale(1.01) !important;
+      border-color: #938F82 !important;
+      box-shadow: 
+        inset 0 1px 0 #FFFFFF,
+        0 6px 14px rgba(0, 0, 0, 0.08),
+        0 18px 36px -4px rgba(0, 0, 0, 0.16) !important;
+    }
+    .btn-secondary.btn-default-hover:active {
+      transform: translateY(0) scale(0.98) !important;
+    }
+
+    /* 3. Accent Button (Book Complete Overhaul) */
+    .btn-accent.btn-default-hover {
+      background: linear-gradient(180deg, #245840 0%, #123725 100%) !important;
+      border-color: rgba(52, 211, 153, 0.5) !important;
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 6px 16px rgba(16, 60, 40, 0.35),
+        0 20px 38px -4px rgba(14, 46, 31, 0.65) !important;
+    }
+    .btn-accent.btn-default-hover::after {
+      animation: btnSheenLoop 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+      animation-delay: 0.4s !important;
+    }
+    .btn-accent.btn-default-hover i, 
+    .btn-accent.btn-default-hover svg {
+      transform: translateX(3px) !important;
+    }
+    .btn-accent.btn-default-hover:hover {
+      transform: translateY(-3px) scale(1.01) !important;
+      border-color: rgba(52, 211, 153, 0.7) !important;
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 8px 20px rgba(16, 60, 40, 0.45),
+        0 26px 48px -4px rgba(14, 46, 31, 0.75) !important;
+    }
+    .btn-accent.btn-default-hover:active {
+      transform: translateY(0) scale(0.98) !important;
+    }
+
     /* Dribbble Luxury Liquid Frosted Glass Card */
     .liquid-frost-card {
       position: relative;
@@ -437,7 +555,7 @@
         <a href="https://www.youtube.com/@karaanunfiltered" target="_blank" rel="noopener" class="p-2 text-brand-gray hover:text-black transition" title="YouTube">
           <i data-lucide="youtube" class="w-4 h-4"></i>
         </a>
-        <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary text-xs sm:text-sm px-4 py-2.5">
+        <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary btn-default-hover text-xs sm:text-sm px-4 py-2.5">
           Book Consultation
         </button>
       </div>
@@ -496,11 +614,11 @@
 
           <!-- Buttons -->
           <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5">
-            <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base gap-2">
+            <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary btn-default-hover w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base gap-2">
               <span>Book Your 1:1 Call</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <a href="https://wa.me/?text=Hi%20Karandeep,%20I%20want%20to%20inquire%20about%20a%201:1%20consultation" target="_blank" class="btn-secondary w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-base gap-2 justify-center">
+            <a href="https://wa.me/?text=Hi%20Karandeep,%20I%20want%20to%20inquire%20about%20a%201:1%20consultation" target="_blank" class="btn-secondary btn-default-hover w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-base gap-2 justify-center">
               <i data-lucide="message-circle" class="w-4 h-4 text-brand-forest"></i>
               <span>WhatsApp Inquiries</span>
             </a>
@@ -745,7 +863,7 @@
           </div>
 
           <div class="pt-6">
-            <button onclick="openBookingModal('Complete Skin + Hair Overhaul (60 Mins — ₹1,799)')" class="btn-accent w-full py-4 text-xs sm:text-sm font-bold gap-2">
+            <button onclick="openBookingModal('Complete Skin + Hair Overhaul (60 Mins — ₹1,799)')" class="btn-accent btn-default-hover w-full py-4 text-xs sm:text-sm font-bold gap-2">
               <span>Book Complete Overhaul</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -791,7 +909,7 @@
           </div>
 
           <div class="pt-6">
-            <button onclick="openBookingModal('Hair Regrowth & Density (35 Mins — ₹999)')" class="btn-secondary w-full py-3.5 text-xs sm:text-sm font-bold">
+            <button onclick="openBookingModal('Hair Regrowth & Density (35 Mins — ₹999)')" class="btn-secondary btn-default-hover w-full py-3.5 text-xs sm:text-sm font-bold">
               Select Hair Plan &rarr;
             </button>
           </div>
