@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karandeep Singh — 1:1 Skin & Hair Consultations</title>
+  <meta name="description" content="Book 1:1 private consultations with Karandeep Singh (Karan Unfiltered). Real skin barrier repair, Tretinoin routines, and hair regrowth protocols.">
+  <link rel="icon" type="image/jpeg" href="profile.jpg">
+
+  <!-- Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              DEFAULT: '#FAFAF8',
+              card: '#FFFFFF',
+              dark: '#111215',
+              subtle: '#F2F1EC',
+            },
+            brand: {
+              black: '#0D0E11',
+              charcoal: '#1A1C22',
+              gray: '#606470',
+              border: '#E5E4DE',
+              forest: '#1B382B',
+              forestHover: '#13281E',
+              emerald: '#15803D',
+              lightGreen: '#EAF3ED',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          boxShadow: {
+            'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.02)',
+            'clean': '0 10px 30px -10px rgba(0, 0, 0, 0.07)',
+            'modal': '0 25px 60px -15px rgba(0, 0, 0, 0.25)',
+            'button': '0 2px 0 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- React Bits LogoLoop Stylesheet -->
+  <link rel="stylesheet" href="LogoLoop.css">
+
+  <style>
+    body {
+      background-color: #FAFAF8;
+      color: #0D0E11;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Custom Interactive Input Design */
+    .custom-input-group {
+      position: relative;
+    }
+    .custom-input {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1.5px solid #E5E4DE;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #0D0E11;
+      font-weight: 500;
+      outline: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .custom-input:focus {
+      border-color: #0D0E11;
+      box-shadow: 0 0 0 3px rgba(13, 14, 17, 0.08);
+    }
+    .custom-input::placeholder {
+      color: #9CA3AF;
+      font-weight: 400;
+    }
+
+    /* Custom Selection Chips */
+    .chip-option {
+      cursor: pointer;
+      border: 1.5px solid #E5E4DE;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 12px 14px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .chip-option:hover {
+      border-color: #B8B6AD;
+      background: #FDFDFD;
+    }
+    .chip-option.active {
+      border-color: #0D0E11;
+      background: #0D0E11;
+      color: #FFFFFF;
+    }
+    .chip-option.active span {
+      color: #FFFFFF !important;
+    }
+    .chip-option.active p {
+      color: #D1D5DB !important;
+    }
+
+    /* Tactile High-End Button */
+    /* High-Power Tactile Buttons with Dynamic Sheen & Spring Physics */
+    .btn-primary {
+      position: relative;
+      background: linear-gradient(180deg, #1A1D24 0%, #080A0D 100%);
+      color: #FFFFFF;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 10px 24px -4px rgba(10, 12, 16, 0.4);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+      transform: rotate(25deg);
+      transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .btn-primary:hover::after {
+      left: 130%;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(180deg, #242934 0%, #0E1015 100%);
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 18px 36px -6px rgba(10, 12, 16, 0.55);
+    }
+    .btn-primary:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 
+        inset 0 1px 0 rgba(0, 0, 0, 0.3),
+        0 4px 12px rgba(10, 12, 16, 0.25);
+    }
+    .btn-primary i, .btn-primary svg {
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-primary:hover i, .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F9F8F5 100%);
+      color: #0E1015;
+      border: 1px solid #D6D4CA;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 
+        inset 0 1px 0 #FFFFFF,
+        0 2px 4px rgba(0, 0, 0, 0.04),
+        0 6px 16px -2px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: linear-gradient(180deg, #FFFFFF 0%, #EFEFE9 100%);
+      border-color: #B5B2A5;
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 1px 0 #FFFFFF,
+        0 4px 8px rgba(0, 0, 0, 0.06),
+        0 12px 24px -4px rgba(0, 0, 0, 0.1);
+      color: #000000;
+    }
+    .btn-secondary:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* High-Conversion Accent Button for Featured Package */
+    .btn-accent {
+      position: relative;
+      background: linear-gradient(180deg, #1C4834 0%, #0E2E1F 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 4px 12px rgba(16, 60, 40, 0.25),
+        0 12px 28px -4px rgba(14, 46, 31, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .btn-accent::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: rotate(25deg);
+      transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .btn-accent:hover::after {
+      left: 130%;
+    }
+    .btn-accent:hover {
+      background: linear-gradient(180deg, #245840 0%, #123725 100%);
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        0 6px 16px rgba(16, 60, 40, 0.35),
+        0 18px 36px -4px rgba(14, 46, 31, 0.6);
+      border-color: rgba(52, 211, 153, 0.5);
+    }
+    .btn-accent:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Dribbble Luxury Liquid Frosted Glass Card */
+    .liquid-frost-card {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #14171C;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 
+        0 25px 60px -12px rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+      aspect-ratio: 3 / 4;
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    .liquid-frost-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .liquid-frost-card:hover img {
+      transform: scale(1.03);
+    }
+    
+    /* Progressive Frosted Glass Blur Overlay */
+    .liquid-frost-backdrop {
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 36%;
+      backdrop-filter: blur(20px) saturate(190%);
+      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      background: linear-gradient(
+        180deg,
+        rgba(15, 20, 24, 0) 0%,
+        rgba(15, 20, 24, 0.25) 30%,
+        rgba(15, 20, 24, 0.55) 70%,
+        rgba(15, 20, 24, 0.78) 100%
+      );
+      mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+    }
+
+    .liquid-frost-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px 22px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .liquid-frost-content {
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Pill-shaped Reserve Now Button with Luminous Sheen & Magnetic Depth */
+    .btn-liquid-reserve {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(180deg, #FFFFFF 0%, #EDEDED 100%);
+      color: #080A0D;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      padding: 14px 22px;
+      border-radius: 9999px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 
+        inset 0 1px 1px #FFFFFF,
+        inset 0 -1px 2px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.25),
+        0 16px 36px -4px rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      outline: none;
+      overflow: hidden;
+    }
+    .btn-liquid-reserve::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: rotate(25deg);
+      transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .btn-liquid-reserve:hover::after {
+      left: 130%;
+    }
+    .btn-liquid-reserve:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 
+        inset 0 1px 1px #FFFFFF,
+        0 6px 18px rgba(0, 0, 0, 0.3),
+        0 24px 44px -4px rgba(0, 0, 0, 0.6);
+      color: #000000;
+    }
+    .btn-liquid-reserve:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Mobile-Specific Hero Card Refinements (Screen <= 640px) */
+    @media (max-width: 640px) {
+      .liquid-frost-card {
+        max-width: 310px;
+        border-radius: 26px;
+        box-shadow: 
+          0 18px 44px -10px rgba(0, 0, 0, 0.35),
+          0 0 0 1px rgba(255, 255, 255, 0.18);
+      }
+      .liquid-frost-backdrop {
+        height: 38%;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+      }
+      .liquid-frost-overlay {
+        padding: 16px 16px;
+      }
+      .liquid-frost-content {
+        gap: 8px;
+      }
+      .btn-liquid-reserve {
+        padding: 11px 18px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body class="selection:bg-brand-charcoal selection:text-white antialiased">
+
+  <!-- MINIMAL CLEAN NAVIGATION -->
+  <header class="border-b border-brand-border bg-surface/90 sticky top-0 z-40 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between">
+      
+      <!-- Creator Brand -->
+      <a href="#" class="flex items-center gap-3">
+        <img src="profile.jpg" alt="Karandeep Singh" class="w-9 h-9 rounded-full object-cover ring-1 ring-black/10">
+        <div>
+          <span class="font-bold text-sm tracking-tight text-brand-black block leading-none">Karandeep Singh</span>
+          <span class="text-xs text-brand-gray">@karaanunfiltered</span>
+        </div>
+      </a>
+
+      <!-- Clean Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-gray">
+        <a href="#consultations" class="hover:text-brand-black transition">Consultations</a>
+        <a href="#about" class="hover:text-brand-black transition">About</a>
+        <a href="#testimonials" class="hover:text-brand-black transition">Client Results</a>
+        <a href="#faq" class="hover:text-brand-black transition">FAQ</a>
+      </nav>
+
+      <!-- Action -->
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/karaanunfiltered/" target="_blank" rel="noopener" class="p-2 text-brand-gray hover:text-black transition" title="Instagram">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+        </a>
+        <a href="https://www.youtube.com/@karaanunfiltered" target="_blank" rel="noopener" class="p-2 text-brand-gray hover:text-black transition" title="YouTube">
+          <i data-lucide="youtube" class="w-4 h-4"></i>
+        </a>
+        <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary text-xs sm:text-sm px-4 py-2.5">
+          Book Consultation
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION: ULTRA CLEAN, POWERFUL, NO AI BADGES -->
+  <section class="py-10 sm:py-18 lg:py-24 border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Bold, Direct Proposition -->
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
+          
+          <!-- Creator Brand Eyebrow (Mobile-friendly micro badge) -->
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-forest/5 border border-brand-forest/15 text-[11px] sm:text-xs font-bold text-brand-forest">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span>
+            <span>Karan Unfiltered</span>
+            <span class="text-brand-gray/40">•</span>
+            <span>Private 1:1 Video Protocols</span>
+          </div>
+
+          <h1 class="text-[31px] sm:text-5xl lg:text-6xl font-extrabold text-brand-black tracking-tight leading-[1.12] sm:leading-[1.08]">
+            Personal 1:1 Skin & Hair Consultations.
+          </h1>
+
+          <p class="text-sm sm:text-lg text-brand-gray max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Direct video calls with Karandeep Singh. We analyze your skin barrier, evaluate your current products, and build a precise AM/PM routine tailored to your biology.
+          </p>
+
+          <!-- Core Pillars (Responsive: compact, modern 3-column micro-cards on mobile, clean spacious text on desktop) -->
+          <div class="pt-1 sm:pt-2 grid grid-cols-3 sm:grid-cols-3 gap-2 sm:gap-4 border-t border-brand-border pt-4 sm:pt-6 text-left">
+            <div class="bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-xl sm:rounded-none border border-brand-border sm:border-0 shadow-subtle sm:shadow-none">
+              <div class="flex items-center gap-1.5 text-brand-forest mb-1 sm:hidden">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-[11px] sm:text-xs font-bold text-brand-black leading-tight">Independent</p>
+              <p class="text-[10px] sm:text-xs text-brand-gray mt-0.5 leading-snug">0 brand deals or sponsorships.</p>
+            </div>
+            <div class="bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-xl sm:rounded-none border border-brand-border sm:border-0 shadow-subtle sm:shadow-none">
+              <div class="flex items-center gap-1.5 text-brand-forest mb-1 sm:hidden">
+                <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-[11px] sm:text-xs font-bold text-brand-black leading-tight">Proven Actives</p>
+              <p class="text-[10px] sm:text-xs text-brand-gray mt-0.5 leading-snug">Tretinoin & Minoxidil science.</p>
+            </div>
+            <div class="bg-white/80 sm:bg-transparent p-2.5 sm:p-0 rounded-xl sm:rounded-none border border-brand-border sm:border-0 shadow-subtle sm:shadow-none">
+              <div class="flex items-center gap-1.5 text-brand-forest mb-1 sm:hidden">
+                <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              </div>
+              <p class="text-[11px] sm:text-xs font-bold text-brand-black leading-tight">Direct Plan</p>
+              <p class="text-[10px] sm:text-xs text-brand-gray mt-0.5 leading-snug">Written PDF to WhatsApp.</p>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5">
+            <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base gap-2">
+              <span>Book Your 1:1 Call</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <a href="https://wa.me/?text=Hi%20Karandeep,%20I%20want%20to%20inquire%20about%20a%201:1%20consultation" target="_blank" class="btn-secondary w-full sm:w-auto px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-base gap-2 justify-center">
+              <i data-lucide="message-circle" class="w-4 h-4 text-brand-forest"></i>
+              <span>WhatsApp Inquiries</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: LUXURY LIQUID FROSTED GLASS CARD (WITH AMBIENT DEPTH) -->
+        <div class="lg:col-span-5 relative flex justify-center mt-2 lg:mt-0">
+          <!-- Warm Terracotta & Olive Ambient Depth Aura -->
+          <div class="absolute -inset-2 sm:-inset-6 bg-gradient-to-tr from-amber-600/25 via-emerald-600/20 to-amber-500/10 rounded-[32px] sm:rounded-[44px] blur-2xl sm:blur-3xl opacity-75 pointer-events-none transform -rotate-1"></div>
+
+          <div class="liquid-frost-card relative z-10">
+            <!-- Mobile Verified Floating Chip -->
+            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/55 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-xs font-semibold shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>1:1 Video Calls</span>
+            </div>
+
+            <!-- Terracotta Architectural Portrait of Karandeep Singh -->
+            <img src="karandeep_hero.jpg" alt="Karandeep Singh - Karan Unfiltered">
+
+            <!-- Progressive Frosted Glass Blur Overlay -->
+            <div class="liquid-frost-backdrop"></div>
+
+            <!-- Content Overlay over Frosted Glass -->
+            <div class="liquid-frost-overlay">
+              <div class="liquid-frost-content">
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-tight drop-shadow-sm">
+                    Karandeep Singh
+                  </h3>
+                  <p class="text-[11px] sm:text-xs text-white/90 leading-relaxed mt-0.5 drop-shadow font-normal">
+                    Skin & Hair Creator • @karaanunfiltered
+                  </p>
+                </div>
+
+                <!-- Clean Full-Width Pill Reserve Button with Pulse -->
+                <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-liquid-reserve">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Reserve 1:1 Session</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND COLLABORATIONS & TRUSTED BY (REACT BITS LOGOLOOP) -->
+  <section class="py-9 border-b border-brand-border bg-white overflow-hidden select-none">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span>
+          <span class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-brand-gray/90">
+            Brand Collaborations & Feature Partnerships
+          </span>
+        </div>
+        <span class="text-[11px] text-brand-gray/60 font-medium hidden sm:inline">
+          Continuous loop • Drag or swipe • Click to visit
+        </span>
+      </div>
+    </div>
+
+    <!-- React Bits LogoLoop Component Container -->
+    <div id="trustedByLoop" class="w-full"></div>
+  </section>
+
+  <!-- DOCUMENTED DAILY PROTOCOLS & VIDEO PROOF (REAL REELS EVIDENCE) -->
+  <section class="py-16 sm:py-20 border-b border-brand-border bg-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div class="max-w-xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Proof In Public</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-black tracking-tight mt-1">
+            Documented Daily Protocols
+          </h2>
+          <p class="text-sm text-brand-gray mt-2 leading-relaxed">
+            Day-by-day video logs testing Tretinoin 0.05%, Azelaic acid, and Minoxidil on real skin with zero smoothing filters.
+          </p>
+        </div>
+        <a href="https://www.youtube.com/@karaanunfiltered" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-brand-black hover:text-brand-forest transition">
+          <span>Watch on YouTube (@karaanunfiltered)</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Authentic YouTube Shorts / Reels Grid -->
+        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-brand-border shadow-sm bg-brand-black">
+          <img src="karandeep_reels.png" alt="Karandeep Singh daily YouTube logs - Tretinoin, Azelaic acid, Minoxidil routines" class="w-full h-auto object-cover">
+        </div>
+
+        <!-- Real Key Protocols Walkthrough -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-white p-5 rounded-2xl border border-brand-border space-y-2">
+            <div class="flex items-center gap-2 text-brand-forest font-bold text-xs uppercase tracking-wider">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>Active Barrier Protection</span>
+            </div>
+            <h4 class="font-bold text-base text-brand-black">Tretinoin Without The Peeling</h4>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Step-by-step buffer routines that prevent retinoid dermatitis and barrier burns, so you adapt without stopping.
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-brand-border space-y-2">
+            <div class="flex items-center gap-2 text-brand-forest font-bold text-xs uppercase tracking-wider">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Day 5 to Day 30 Progress</span>
+            </div>
+            <h4 class="font-bold text-base text-brand-black">Azelaic Acid & Post-Acne Marks</h4>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Real timeline of clearing post-inflammatory erythema (PIE) and stubborn redness using affordable pharmacy formulas.
+            </p>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-brand-border space-y-2">
+            <div class="flex items-center gap-2 text-brand-forest font-bold text-xs uppercase tracking-wider">
+              <i data-lucide="activity" class="w-4 h-4"></i>
+              <span>Hair Density & Scalp Health</span>
+            </div>
+            <h4 class="font-bold text-base text-brand-black">Surviving Minoxidil Shedding</h4>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              How to navigate the initial telogen effluvium shed without panicking, and optimize scalp absorption safely.
+            </p>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary w-full py-4 text-sm sm:text-base font-bold gap-2.5">
+              <span>Book Your 1:1 Session With Karandeep</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONSULTATION PACKAGES (CLEAN & HONEST) -->
+  <section id="consultations" class="py-16 sm:py-24 border-b border-brand-border bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-black tracking-tight">
+          Consultation Sessions
+        </h2>
+        <p class="text-sm text-brand-gray mt-2">
+          Private video session via Google Meet. You receive a structured routine PDF within 2 hours after the call.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Package 1 -->
+        <div class="border border-brand-border rounded-2xl p-6 sm:p-7 bg-surface flex flex-col justify-between hover:border-brand-black/40 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-gray">Skin Routine</span>
+              <span class="text-xs font-bold text-brand-black bg-white px-2.5 py-1 rounded-md border border-brand-border">35 Min Call</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand-black">Acne & Barrier Repair</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              For active breakouts, Tretinoin peeling, compromised skin barriers, and hyperpigmentation.
+            </p>
+
+            <div class="py-2 border-y border-brand-border">
+              <span class="text-3xl font-extrabold text-brand-black">₹999</span>
+              <span class="text-xs text-brand-gray ml-1">one-time</span>
+            </div>
+
+            <ul class="text-xs text-brand-gray space-y-2.5 pt-1">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span class="text-brand-black font-medium">Complete product audit (eliminating irritants)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Tretinoin & Azelaic acid sequencing plan</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Barrier recovery schedule (AM/PM)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Written PDF routine sent to your WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6">
+            <button onclick="openBookingModal('Acne & Barrier Repair (35 Mins — ₹999)')" class="btn-secondary w-full py-3.5 text-xs sm:text-sm font-bold">
+              Select Skin Plan &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 2: Comprehensive Highlight -->
+        <div class="border-2 border-brand-black rounded-2xl p-6 sm:p-7 bg-white flex flex-col justify-between shadow-clean relative">
+          
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Most Popular</span>
+              <span class="text-xs font-bold text-white bg-brand-black px-2.5 py-1 rounded-md">60 Min Deep Dive</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand-black">Complete Skin + Hair Overhaul</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Full 360° consultation covering your facial skin barrier and your long-term scalp density.
+            </p>
+
+            <div class="py-2 border-y border-brand-border">
+              <span class="text-3xl font-extrabold text-brand-black">₹1,799</span>
+              <span class="text-xs text-brand-gray ml-1">one-time</span>
+            </div>
+
+            <ul class="text-xs text-brand-black space-y-2.5 pt-1">
+              <li class="flex items-start gap-2 font-medium">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Both facial routine and scalp care addressed</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Minoxidil setup + Tretinoin purge prevention</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Exact pharmacy products within your budget</span>
+              </li>
+              <li class="flex items-start gap-2 font-bold text-brand-forest">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>30-Day direct WhatsApp follow-up with Karandeep</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6">
+            <button onclick="openBookingModal('Complete Skin + Hair Overhaul (60 Mins — ₹1,799)')" class="btn-accent w-full py-4 text-xs sm:text-sm font-bold gap-2">
+              <span>Book Complete Overhaul</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="border border-brand-border rounded-2xl p-6 sm:p-7 bg-surface flex flex-col justify-between hover:border-brand-black/40 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-gray">Hair & Scalp</span>
+              <span class="text-xs font-bold text-brand-black bg-white px-2.5 py-1 rounded-md border border-brand-border">35 Min Call</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-brand-black">Hair Regrowth & Density</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              For receding hairlines, thinning temples, persistent dandruff, and Minoxidil onboarding.
+            </p>
+
+            <div class="py-2 border-y border-brand-border">
+              <span class="text-3xl font-extrabold text-brand-black">₹999</span>
+              <span class="text-xs text-brand-gray ml-1">one-time</span>
+            </div>
+
+            <ul class="text-xs text-brand-gray space-y-2.5 pt-1">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span class="text-brand-black font-medium">Hair thinning stage & scalp barrier check</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Minoxidil 5% step-by-step application schedule</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Overcoming initial hair shedding anxiety</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-forest shrink-0"></i>
+                <span>Written scalp care roadmap</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6">
+            <button onclick="openBookingModal('Hair Regrowth & Density (35 Mins — ₹999)')" class="btn-secondary w-full py-3.5 text-xs sm:text-sm font-bold">
+              Select Hair Plan &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AUTHENTIC TESTIMONIALS (REQUESTED BY USER) -->
+  <section id="testimonials" class="py-16 sm:py-24 border-b border-brand-border bg-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-black tracking-tight">
+          Client Feedback
+        </h2>
+        <p class="text-sm text-brand-gray mt-2">
+          Messages from clients who transitioned from generic influencer advice to structured 1:1 routines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-brand-border p-6 rounded-2xl flex flex-col justify-between space-y-4">
+          <p class="text-sm text-brand-black leading-relaxed font-normal">
+            "I was on the verge of quitting Tretinoin because my chin was flaking and burning even when applying basic water. Karandeep had me strip out three unnecessary serums and taught me the sandwich buffering technique. My barrier completely recovered within a week."
+          </p>
+          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+            <div>
+              <p class="font-bold text-xs text-brand-black">Harshavardhan P.</p>
+              <p class="text-[11px] text-brand-gray">Skin Barrier Consultation</p>
+            </div>
+            <span class="text-xs font-semibold text-brand-forest bg-brand-lightGreen px-2 py-0.5 rounded">Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-brand-border p-6 rounded-2xl flex flex-col justify-between space-y-4">
+          <p class="text-sm text-brand-black leading-relaxed font-normal">
+            "The shedding phase of Minoxidil was scaring me so badly I almost stopped. On our call, he walked me through why the weak hairs shed first to make room for anagen growth. 4 months in, my hairline is visibly filling in."
+          </p>
+          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+            <div>
+              <p class="font-bold text-xs text-brand-black">Simranjeet S.</p>
+              <p class="text-[11px] text-brand-gray">Hair Regrowth Session</p>
+            </div>
+            <span class="text-xs font-semibold text-brand-forest bg-brand-lightGreen px-2 py-0.5 rounded">Verified Client</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-brand-border p-6 rounded-2xl flex flex-col justify-between space-y-4">
+          <p class="text-sm text-brand-black leading-relaxed font-normal">
+            "Instead of telling me to buy ₹8,000 worth of luxury creams, he gave me a simple ₹1,400 pharmacy plan with Azelaic acid and a gentle cleanser. Having him on WhatsApp to confirm how often to apply it was worth every rupee."
+          </p>
+          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+            <div>
+              <p class="font-bold text-xs text-brand-black">Aditya V.</p>
+              <p class="text-[11px] text-brand-gray">Combined Skin + Hair Overhaul</p>
+            </div>
+            <span class="text-xs font-semibold text-brand-forest bg-brand-lightGreen px-2 py-0.5 rounded">Verified Client</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT KARANDEEP (MINIMAL, HONEST) -->
+  <section id="about" class="py-16 sm:py-20 border-b border-brand-border bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      
+      <h2 class="text-3xl font-extrabold text-brand-black tracking-tight">
+        Why Karan Unfiltered?
+      </h2>
+
+      <div class="text-sm sm:text-base text-brand-gray leading-relaxed space-y-4">
+        <p>
+          I started sharing my experience because skincare and haircare content has become dominated by sponsored promotions, paid influencer brand deals, and unrealistic smoothing filters.
+        </p>
+        <p>
+          People spend hard-earned money on 10-step routines they don't need, or panic and quit powerful treatments like Tretinoin and Minoxidil because nobody explained the initial transition phase.
+        </p>
+        <p>
+          In a 1:1 consultation, you talk directly with me. We cut through the confusion, discard counterproductive products, and put together a routine focused on long-term skin health and hair density.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ (CLEAN ACCORDION) -->
+  <section id="faq" class="py-16 sm:py-20 border-b border-brand-border bg-surface">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      
+      <h2 class="text-3xl font-extrabold text-brand-black tracking-tight mb-8">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="divide-y divide-brand-border border-y border-brand-border">
+        
+        <div class="py-4">
+          <button onclick="toggleFaq(1)" class="w-full text-left font-bold text-base text-brand-black flex items-center justify-between">
+            <span>How does the video call work?</span>
+            <i data-lucide="chevron-down" id="faqIcon1" class="w-4 h-4 text-brand-gray transition-transform"></i>
+          </button>
+          <div id="faqContent1" class="text-xs sm:text-sm text-brand-gray leading-relaxed pt-2">
+            Calls happen over a private Google Meet video link. You can join from your phone or laptop. Good natural lighting helps inspect your skin texture or scalp density clearly.
+          </div>
+        </div>
+
+        <div class="py-4">
+          <button onclick="toggleFaq(2)" class="w-full text-left font-bold text-base text-brand-black flex items-center justify-between">
+            <span>What do I get after the session?</span>
+            <i data-lucide="chevron-down" id="faqIcon2" class="w-4 h-4 text-brand-gray transition-transform"></i>
+          </button>
+          <div id="faqContent2" class="hidden text-xs sm:text-sm text-brand-gray leading-relaxed pt-2">
+            Within 2 hours of the call, you receive a written summary outlining your AM and PM routine, application instructions, and budget-friendly product suggestions via WhatsApp.
+          </div>
+        </div>
+
+        <div class="py-4">
+          <button onclick="toggleFaq(3)" class="w-full text-left font-bold text-base text-brand-black flex items-center justify-between">
+            <span>Do you push expensive cosmetic brands?</span>
+            <i data-lucide="chevron-down" id="faqIcon3" class="w-4 h-4 text-brand-gray transition-transform"></i>
+          </button>
+          <div id="faqContent3" class="hidden text-xs sm:text-sm text-brand-gray leading-relaxed pt-2">
+            No. The focus is strictly on active chemical formulas (e.g., Azelaic acid, Minoxidil, gentle non-comedogenic moisturizers). We look for reliable pharmacy options that fit your realistic budget.
+          </div>
+        </div>
+
+        <div class="py-4">
+          <button onclick="toggleFaq(4)" class="w-full text-left font-bold text-base text-brand-black flex items-center justify-between">
+            <span>Can I reschedule if an emergency arises?</span>
+            <i data-lucide="chevron-down" id="faqIcon4" class="w-4 h-4 text-brand-gray transition-transform"></i>
+          </button>
+          <div id="faqContent4" class="hidden text-xs sm:text-sm text-brand-gray leading-relaxed pt-2">
+            Yes. Simply send a message on WhatsApp at least 6 hours before your appointment time, and we will move your call to the next open slot.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 bg-white text-brand-gray text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-brand-black text-sm">Karandeep Singh</span>
+        <span class="text-brand-border">/</span>
+        <span>Karan Unfiltered</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://www.instagram.com/karaanunfiltered/" target="_blank" class="hover:text-brand-black transition">Instagram</a>
+        <a href="https://www.youtube.com/@karaanunfiltered" target="_blank" class="hover:text-brand-black transition">YouTube</a>
+        <a href="#consultations" class="hover:text-brand-black transition">Consultations</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-brand-border p-3 z-40 flex items-center justify-between gap-3 shadow-lg">
+    <div>
+      <p class="text-xs font-bold text-brand-black leading-tight">1:1 Consultation</p>
+      <p class="text-[11px] text-brand-forest font-semibold">From ₹999</p>
+    </div>
+    <button onclick="openBookingModal('General 1:1 Consultation')" class="btn-primary text-xs px-5 py-2.5 font-bold gap-1.5">
+      <span>Book Call</span>
+      <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+    </button>
+  </div>
+
+  <!-- BOOKING MODAL WITH CUSTOM INTERACTIVE INPUTS (NOT STATIC BROWSER INPUTS) -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-modal relative border border-brand-border my-8">
+      
+      <!-- Close button -->
+      <button onclick="closeBookingModal()" class="absolute top-5 right-5 p-2 rounded-full text-brand-gray hover:text-black hover:bg-surface transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Step Header -->
+      <div class="mb-6">
+        <span class="text-xs font-bold text-brand-forest" id="wizardStepLabel">Step 1 of 2: Session & Date</span>
+        <h3 class="text-2xl font-extrabold text-brand-black mt-1">Book Consultation</h3>
+      </div>
+
+      <!-- Step 1: Session & Date -->
+      <div id="modalStep1" class="space-y-5">
+        
+        <!-- Custom Session Selector -->
+        <div>
+          <label class="block text-xs font-bold text-brand-black uppercase tracking-wider mb-2">Select Consultation Format</label>
+          <div class="space-y-2" id="formatChips">
+            <div class="chip-option active" onclick="selectFormat(this, 'Acne & Barrier Repair (35 Mins — ₹999)')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-brand-black">Acne & Barrier Repair</span>
+                <span class="text-xs font-bold">₹999</span>
+              </div>
+              <p class="text-[11px] text-brand-gray mt-0.5">35 Min Call • Active peeling, acne marks & barrier recovery</p>
+            </div>
+
+            <div class="chip-option" onclick="selectFormat(this, 'Complete Skin + Hair Overhaul (60 Mins — ₹1,799)')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-brand-black">Complete Skin + Hair Overhaul</span>
+                <span class="text-xs font-bold">₹1,799</span>
+              </div>
+              <p class="text-[11px] text-brand-gray mt-0.5">60 Min Call • Full routine overhaul + 30-day WhatsApp support</p>
+            </div>
+
+            <div class="chip-option" onclick="selectFormat(this, 'Hair Regrowth & Density (35 Mins — ₹999)')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-brand-black">Hair Regrowth & Density</span>
+                <span class="text-xs font-bold">₹999</span>
+              </div>
+              <p class="text-[11px] text-brand-gray mt-0.5">35 Min Call • Hairline recovery, Minoxidil onboarding, dandruff</p>
+            </div>
+          </div>
+          <input type="hidden" id="bookingPackageSelect" value="Acne & Barrier Repair (35 Mins — ₹999)">
+        </div>
+
+        <!-- Custom Date & Time Chips -->
+        <div class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold text-brand-black uppercase tracking-wider mb-1.5">Pick Date</label>
+            <input type="date" id="bookingDate" class="custom-input">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-brand-black uppercase tracking-wider mb-1.5">Pick Time Slot</label>
+            <div class="grid grid-cols-2 gap-2" id="timeChips">
+              <div class="chip-option text-center active" onclick="selectTime(this, '11:30 AM')">
+                <span class="text-xs font-bold">11:30 AM IST</span>
+              </div>
+              <div class="chip-option text-center" onclick="selectTime(this, '03:00 PM')">
+                <span class="text-xs font-bold">03:00 PM IST</span>
+              </div>
+              <div class="chip-option text-center" onclick="selectTime(this, '05:30 PM')">
+                <span class="text-xs font-bold">05:30 PM IST</span>
+              </div>
+              <div class="chip-option text-center" onclick="selectTime(this, '08:00 PM')">
+                <span class="text-xs font-bold">08:00 PM IST</span>
+              </div>
+            </div>
+            <input type="hidden" id="bookingTimeSlot" value="11:30 AM">
+          </div>
+        </div>
+
+        <div class="pt-2 flex justify-end">
+          <button onclick="goToModalStep(2)" class="btn-primary w-full py-3 text-sm">
+            Continue to Details &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Custom Form Inputs -->
+      <div id="modalStep2" class="space-y-4 hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-brand-black mb-1">Your Full Name *</label>
+            <input type="text" id="clientName" placeholder="e.g. Rahul Sharma" class="custom-input">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-brand-black mb-1">WhatsApp Number *</label>
+            <input type="tel" id="clientPhone" placeholder="+91 98765 43210" class="custom-input">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-brand-black mb-1">Email Address *</label>
+          <input type="email" id="clientEmail" placeholder="you@example.com" class="custom-input">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-brand-black mb-1">What are you struggling with? *</label>
+          <textarea id="clientConcerns" rows="3" placeholder="Briefly describe your main issue (e.g. peeling from Tretinoin, receding hairline, dark spots) and current products used..." class="custom-input"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between">
+          <button onclick="goToModalStep(1)" class="text-xs font-bold text-brand-gray hover:text-black">
+            &larr; Back
+          </button>
+          <button onclick="submitBooking()" class="btn-primary py-3 px-6 text-sm">
+            Confirm & Send to WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirmation Summary -->
+      <div id="modalStep3" class="space-y-4 hidden text-left py-2">
+        <div class="border-b border-brand-border pb-3">
+          <span class="text-xs font-bold text-brand-forest">Ready to Send</span>
+          <h4 class="text-xl font-bold text-brand-black mt-0.5">Booking Prepared</h4>
+        </div>
+
+        <div class="bg-surface p-4 rounded-xl text-xs space-y-1.5 border border-brand-border text-brand-black">
+          <p><span class="text-brand-gray font-normal">Name:</span> <strong id="confirmClientName">Client</strong></p>
+          <p><span class="text-brand-gray font-normal">Session:</span> <strong id="confirmPackageName">Routine</strong></p>
+          <p><span class="text-brand-gray font-normal">Scheduled:</span> <strong id="confirmDateTime">Date</strong></p>
+        </div>
+
+        <p class="text-xs text-brand-gray leading-relaxed">
+          Tap below to send this directly to Karandeep on WhatsApp to confirm your Google Meet video call invite.
+        </p>
+
+        <div class="space-y-2 pt-2">
+          <a id="confirmWhatsAppBtn" href="#" target="_blank" class="btn-primary w-full py-3.5 text-xs sm:text-sm gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Send to Karandeep via WhatsApp</span>
+          </a>
+          <button onclick="closeBookingModal()" class="btn-secondary w-full py-2.5 text-xs">
+            Done
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LOGIC SCRIPT -->
+  <script>
+    lucide.createIcons();
+
+    // Default Date to tomorrow
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const dateStr = tomorrow.toISOString().split('T')[0];
+    const dateInput = document.getElementById('bookingDate');
+    if (dateInput) {
+      dateInput.value = dateStr;
+      dateInput.min = dateStr;
+    }
+
+    function toggleFaq(id) {
+      const content = document.getElementById(`faqContent${id}`);
+      const icon = document.getElementById(`faqIcon${id}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Custom Chip Selection Logic
+    function selectFormat(el, formatValue) {
+      document.querySelectorAll('#formatChips .chip-option').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('bookingPackageSelect').value = formatValue;
+    }
+
+    function selectTime(el, timeValue) {
+      document.querySelectorAll('#timeChips .chip-option').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('bookingTimeSlot').value = timeValue;
+    }
+
+    function openBookingModal(pkgName) {
+      const modal = document.getElementById('bookingModal');
+      
+      if (pkgName) {
+        const chips = document.querySelectorAll('#formatChips .chip-option');
+        chips.forEach(chip => {
+          if (chip.innerText.includes(pkgName.split(' ')[0])) {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            document.getElementById('bookingPackageSelect').value = pkgName;
+          }
+        });
+      }
+      
+      goToModalStep(1);
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function goToModalStep(step) {
+      const step1 = document.getElementById('modalStep1');
+      const step2 = document.getElementById('modalStep2');
+      const step3 = document.getElementById('modalStep3');
+      const label = document.getElementById('wizardStepLabel');
+
+      if (step === 1) {
+        step1.classList.remove('hidden');
+        step2.classList.add('hidden');
+        step3.classList.add('hidden');
+        label.innerText = 'Step 1 of 2: Session & Date';
+      } else if (step === 2) {
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+        step3.classList.add('hidden');
+        label.innerText = 'Step 2 of 2: Your Details';
+      } else if (step === 3) {
+        step1.classList.add('hidden');
+        step2.classList.add('hidden');
+        step3.classList.remove('hidden');
+        label.innerText = 'Confirmation';
+      }
+      lucide.createIcons();
+    }
+
+    function submitBooking() {
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const email = document.getElementById('clientEmail').value.trim();
+      const concerns = document.getElementById('clientConcerns').value.trim();
+      const pkg = document.getElementById('bookingPackageSelect').value;
+      const date = document.getElementById('bookingDate').value;
+      const time = document.getElementById('bookingTimeSlot').value;
+
+      if (!name || !phone || !email) {
+        alert('Please provide your name, phone number, and email.');
+        return;
+      }
+
+      document.getElementById('confirmClientName').innerText = name;
+      document.getElementById('confirmPackageName').innerText = pkg;
+      document.getElementById('confirmDateTime').innerText = `${date} at ${time}`;
+
+      const waMsg = encodeURIComponent(
+        `Hi Karandeep, I would like to book a 1:1 consultation.\n\n` +
+        `• Name: ${name}\n` +
+        `• Session: ${pkg}\n` +
+        `• Slot: ${date} at ${time}\n` +
+        `• Issue: ${concerns || 'Discuss on call'}\n\n` +
+        `Please confirm availability.`
+      );
+      document.getElementById('confirmWhatsAppBtn').href = `https://wa.me/?text=${waMsg}`;
+
+      goToModalStep(3);
+    }
+  </script>
+
+  <!-- React Bits LogoLoop Component Script -->
+  <script src="LogoLoop.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const brandLogos = [
+        {
+          src: 'brand_themancompany_dark.png',
+          alt: 'The Man Company',
+          title: 'The Man Company (www.themancompany.com)',
+          href: 'https://www.themancompany.com'
+        },
+        {
+          src: 'brand_urbanmooch_dark.png',
+          alt: 'Urban Mooch',
+          title: 'Urban Mooch (urbanmooch.com)',
+          href: 'https://urbanmooch.com/'
+        },
+        {
+          src: 'brand_oneeleven_dark.png',
+          alt: 'One Eleven',
+          title: 'One Eleven Ayurveda X Science (oneeleven.in)',
+          href: 'https://oneeleven.in/'
+        },
+        {
+          src: 'brand_denver_dark.png',
+          alt: 'Denver For Men',
+          title: 'Denver For Men (denverformen.com)',
+          href: 'https://denverformen.com/'
+        }
+      ];
+
+      const loopContainer = document.getElementById('trustedByLoop');
+      if (loopContainer && window.initLogoLoop) {
+        window.initLogoLoop(loopContainer, {
+          logos: brandLogos,
+          speed: 85,
+          direction: 'left',
+          logoHeight: 38,
+          gap: 60,
+          hoverSpeed: 0,
+          pauseOnHover: true,
+          fadeOut: true,
+          fadeOutWidth: 0.15,
+          scaleOnHover: true,
+          draggable: true,
+          scrollBoost: 0.25,
+          labels: 'hover',
+          ariaLabel: 'Trusted By & Brand Collaborations'
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
